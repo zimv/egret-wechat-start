@@ -1,0 +1,15 @@
+{
+    "version": 5,
+    "files": [
+        "./pics/bg.png",
+        "./pics/msg.png"
+    ],
+    "projectName": "index",
+    "options": {
+        "extend": 0,
+        "layoutMath": "3",
+        "sizeMode": "free",
+        "useExtension": 0,
+        "layoutGap": 1
+    }
+}

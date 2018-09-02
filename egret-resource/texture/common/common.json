@@ -1,0 +1,4 @@
+{"file":"common.png","frames":{
+"back":{"x":0,"y":0,"w":46,"h":48,"offX":0,"offY":0,"sourceW":46,"sourceH":48},
+"female":{"x":0,"y":50,"w":35,"h":35,"offX":0,"offY":1,"sourceW":35,"sourceH":36},
+"male":{"x":0,"y":87,"w":35,"h":35,"offX":0,"offY":0,"sourceW":35,"sourceH":35}}}

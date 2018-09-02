@@ -1,0 +1,16 @@
+{
+    "version": 5,
+    "files": [
+        "./pics/go.png",
+        "./pics/ready.png",
+        "./pics/round.png"
+    ],
+    "projectName": "battle",
+    "options": {
+        "extend": 0,
+        "layoutMath": "3",
+        "sizeMode": "free",
+        "useExtension": 0,
+        "layoutGap": 1
+    }
+}

@@ -1,0 +1,15 @@
+{
+"resources":
+    [
+        {"name":"common","type":"sheet","url":"assets/common.json"},
+        {"name":"index","type":"sheet","url":"assets/index.json"},
+        {"name":"list","type":"sheet","url":"assets/list.json"},
+        {"name":"battle","type":"sheet","url":"assets/battle.json"},
+        {"name":"indexbg","type":"image","url":"assets/indexbg.png"},
+        {"name":"listbg","type":"image","url":"assets/listbg.png"}
+    ],
+"groups":
+    [
+        {"name":"preload","keys":"common,index,list,battle,indexbg,listbg"}
+    ]
+}

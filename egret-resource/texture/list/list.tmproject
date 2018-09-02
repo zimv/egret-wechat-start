@@ -1,0 +1,14 @@
+{
+    "version": 5,
+    "files": [
+        "./pics/item.png"
+    ],
+    "projectName": "list",
+    "options": {
+        "extend": 0,
+        "layoutMath": "1",
+        "sizeMode": "free",
+        "useExtension": 0,
+        "layoutGap": 1
+    }
+}

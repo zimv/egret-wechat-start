@@ -1,0 +1,16 @@
+{
+    "version": 5,
+    "files": [
+        "./pics/male.png",
+        "./pics/female.png",
+        "./pics/back.png"
+    ],
+    "projectName": "common",
+    "options": {
+        "extend": 0,
+        "layoutMath": "3",
+        "sizeMode": "free",
+        "useExtension": 0,
+        "layoutGap": 1
+    }
+}

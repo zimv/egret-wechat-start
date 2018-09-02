@@ -1,0 +1,4 @@
+{"file":"battle.png","frames":{
+"round":{"x":361,"y":0,"w":126,"h":30,"offX":0,"offY":0,"sourceW":126,"sourceH":30},
+"ready":{"x":0,"y":0,"w":359,"h":90,"offX":0,"offY":0,"sourceW":359,"sourceH":90},
+"go":{"x":0,"y":92,"w":248,"h":94,"offX":0,"offY":0,"sourceW":248,"sourceH":94}}}
