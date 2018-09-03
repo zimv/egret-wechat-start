@@ -1,6 +1,5 @@
 class Index_ui extends Base {
-    //$代表形状和文字绘制
-    public RES_layout = {
+    public el_layout = {
         indexbg: {x:0, y:0, w:750, h:1665},
         bg: {x:0, y:50, w:750, h:553},
         msg: {x:100, y:700, w:471, h:104},
@@ -25,14 +24,15 @@ class Index_ui extends Base {
 
         //背景
         let RES_bg = new egret.Bitmap( RES.getRes('indexbg') );
-        $util.setLayout(RES_bg, this.RES_layout['indexbg']);
+        $util.setLayout(RES_bg, this.el_layout['indexbg']);
         RES_bg.fillMode = egret.BitmapFillMode.REPEAT;
         this.$main.PageBg.addChild(RES_bg);//加载到main的PageBg里去，保证背景不滚动
         //顶部元素必传值
-        this.$firstEleY = this.RES_layout.gold.y;
+        this.$firstEleY = this.el_layout.gold.y;
 
         this.fastBitmap('bg');
-        this.fastBitmap('msg');
+        let msg = this.fastBitmap('msg');
+        msg.filters = [colorGrayFilter];//滤镜效果
         this.$el.gold = this.drawGoldText();
 
         let toList = new egret.TextField();
@@ -65,7 +65,7 @@ class Index_ui extends Base {
     //快速创建
     private fastBitmap(name){
         let RES_bitmap = new egret.Bitmap( this.RES_index.getTexture(name) );
-        $util.setLayout(RES_bitmap, this.RES_layout[name]);
+        $util.setLayout(RES_bitmap, this.el_layout[name]);
         this.addChild(RES_bitmap);
         return RES_bitmap;
     }
@@ -76,7 +76,7 @@ class Index_ui extends Base {
         textField.textColor = 0x000000;
         textField.size = 26;
         textField.textAlign = 'center';
-        $util.setLayout(textField, this.RES_layout.gold);
+        $util.setLayout(textField, this.el_layout.gold);
         this.addChild(textField);
         return textField
     }

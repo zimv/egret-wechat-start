@@ -8,8 +8,8 @@ class Index extends Index_ui {
        
         this.createView();
 
-        setTimeout(()=>{
-            this.$data.gold = '3000';
+        setInterval(()=>{
+        this.$data.gold = (Math.random()*10000).toString();
         }, 3000)
     }
    

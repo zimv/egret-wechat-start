@@ -170,7 +170,7 @@ var Index_ui = (function (_super) {
     Index_ui.prototype.createView = function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
-            var RES_bg, toList;
+            var RES_bg, msg, toList;
             return __generator(this, function (_a) {
                 RES_bg = new egret.Bitmap(RES.getRes('indexbg'));
                 $util.setLayout(RES_bg, this.RES_layout['indexbg']);
@@ -179,7 +179,8 @@ var Index_ui = (function (_super) {
                 //顶部元素必传值
                 this.$firstEleY = this.RES_layout.gold.y;
                 this.fastBitmap('bg');
-                this.fastBitmap('msg');
+                msg = this.fastBitmap('msg');
+                msg.filters = [colorGrayFilter]; //滤镜效果
                 this.$el.gold = this.drawGoldText();
                 toList = new egret.TextField();
                 toList.text = "点我进入列表页!";
@@ -333,7 +334,7 @@ var List_ui = (function (_super) {
             $util.setLayout(No, _this.RES_layout.item.No);
             No.textColor = 0xffffff;
             No.size = 40;
-            No.text = item.No;
+            No.text = item.No + '  点击进入下个页面';
             itemCon.addChild(No);
             itemCon.touchEnabled = true;
             itemCon.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
@@ -363,8 +364,8 @@ var Index = (function (_super) {
     Index.prototype.init = function () {
         var _this = this;
         this.createView();
-        setTimeout(function () {
-            _this.$data.gold = '3000';
+        setInterval(function () {
+            _this.$data.gold = (Math.random() * 10000).toString();
         }, 3000);
     };
     Index.prototype.onDestroy = function () {

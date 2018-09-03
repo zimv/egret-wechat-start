@@ -1,6 +1,5 @@
 class List_ui extends Base {
-    //$代表形状和文字绘制
-    public RES_layout = {
+    public el_layout = {
         bg: {x:0, y:0, w:750, h:1634},
         back: {x:46, y:33, w:46, h:48},
         item: {
@@ -27,14 +26,14 @@ class List_ui extends Base {
     public async createView() {
         //背景
         let RES_bg = new egret.Bitmap( RES.getRes('listbg') );
-        $util.setLayout(RES_bg, this.RES_layout['bg']);
+        $util.setLayout(RES_bg, this.el_layout['bg']);
         this.$main.PageBg.addChild(RES_bg);//加载到main的PageBg里去，保证背景不滚动
         
         //顶部元素必传值
-        this.$firstEleY = this.RES_layout.back.y;
+        this.$firstEleY = this.el_layout.back.y;
 
         let back = new egret.Bitmap( this.RES_common.getTexture('back') );
-        $util.setLayout(back, this.RES_layout.back)
+        $util.setLayout(back, this.el_layout.back)
         this.addChild(back);
         $util.btnActive(back, ()=>{
             this.$main.back();
@@ -49,10 +48,10 @@ class List_ui extends Base {
             //容器
             let itemCon = new egret.DisplayObjectContainer();
             let layout = {
-                x: this.RES_layout.item.x,
-                y: this.RES_layout.item.y + index * 280,
-                w: this.RES_layout.item.w,
-                h: this.RES_layout.item.h
+                x: this.el_layout.item.x,
+                y: this.el_layout.item.y + index * 280,
+                w: this.el_layout.item.w,
+                h: this.el_layout.item.h
             }
             $util.setLayout(itemCon, layout);
             this.addChild(itemCon);
@@ -78,10 +77,10 @@ class List_ui extends Base {
             itemCon.addChild(RES_item);
 
             let No = new egret.TextField();
-            $util.setLayout(No, this.RES_layout.item.No);
+            $util.setLayout(No, this.el_layout.item.No);
             No.textColor = 0xffffff;
             No.size = 40;
-            No.text = item.No;            
+            No.text = item.No + '  点击进入下个页面';     
             itemCon.addChild(No);
             
             itemCon.touchEnabled = true;
@@ -94,7 +93,7 @@ class List_ui extends Base {
     //快速创建
     private fastBitmap(resObj, name){
         let RES_bitmap = new egret.Bitmap( resObj.getTexture(name) );
-        $util.setLayout(RES_bitmap, this.RES_layout[name]);
+        $util.setLayout(RES_bitmap, this.el_layout[name]);
         this.addChild(RES_bitmap);
         return RES_bitmap;
     }
