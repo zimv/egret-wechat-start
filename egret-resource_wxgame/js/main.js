@@ -84,8 +84,7 @@ var Battle_ui = (function (_super) {
     __extends(Battle_ui, _super);
     function Battle_ui() {
         var _this = _super.call(this) || this;
-        //$代表形状和文字绘制
-        _this.RES_layout = {
+        _this.el_layout = {
             bg: { x: 0, y: 0, w: 750, h: 1634 },
             back: { x: 46, y: 33, w: 46, h: 48 },
             go: { x: 251, y: 488, w: 248, h: 94 },
@@ -119,12 +118,12 @@ var Battle_ui = (function (_super) {
         var _this = this;
         //背景
         var RES_bg = new egret.Bitmap(RES.getRes('listbg'));
-        $util.setLayout(RES_bg, this.RES_layout['bg']);
+        $util.setLayout(RES_bg, this.el_layout['bg']);
         this.$main.PageBg.addChild(RES_bg); //加载到main的PageBg里去，保证背景不滚动
         //顶部元素必传值
-        this.$firstEleY = this.RES_layout.back.y;
+        this.$firstEleY = this.el_layout.back.y;
         var back = new egret.Bitmap(this.RES_common.getTexture('back'));
-        $util.setLayout(back, this.RES_layout.back);
+        $util.setLayout(back, this.el_layout.back);
         this.addChild(back);
         $util.btnActive(back, function () {
             _this.$main.back();
@@ -139,7 +138,7 @@ var Battle_ui = (function (_super) {
     //快速创建
     Battle_ui.prototype.fastBitmap = function (resObj, name) {
         var RES_bitmap = new egret.Bitmap(resObj.getTexture(name));
-        $util.setLayout(RES_bitmap, this.RES_layout[name]);
+        $util.setLayout(RES_bitmap, this.el_layout[name]);
         this.addChild(RES_bitmap);
         return RES_bitmap;
     };
@@ -150,8 +149,7 @@ var Index_ui = (function (_super) {
     __extends(Index_ui, _super);
     function Index_ui() {
         var _this = _super.call(this) || this;
-        //$代表形状和文字绘制
-        _this.RES_layout = {
+        _this.el_layout = {
             indexbg: { x: 0, y: 0, w: 750, h: 1665 },
             bg: { x: 0, y: 50, w: 750, h: 553 },
             msg: { x: 100, y: 700, w: 471, h: 104 },
@@ -173,11 +171,11 @@ var Index_ui = (function (_super) {
             var RES_bg, msg, toList;
             return __generator(this, function (_a) {
                 RES_bg = new egret.Bitmap(RES.getRes('indexbg'));
-                $util.setLayout(RES_bg, this.RES_layout['indexbg']);
+                $util.setLayout(RES_bg, this.el_layout['indexbg']);
                 RES_bg.fillMode = egret.BitmapFillMode.REPEAT;
                 this.$main.PageBg.addChild(RES_bg); //加载到main的PageBg里去，保证背景不滚动
                 //顶部元素必传值
-                this.$firstEleY = this.RES_layout.gold.y;
+                this.$firstEleY = this.el_layout.gold.y;
                 this.fastBitmap('bg');
                 msg = this.fastBitmap('msg');
                 msg.filters = [colorGrayFilter]; //滤镜效果
@@ -213,7 +211,7 @@ var Index_ui = (function (_super) {
     //快速创建
     Index_ui.prototype.fastBitmap = function (name) {
         var RES_bitmap = new egret.Bitmap(this.RES_index.getTexture(name));
-        $util.setLayout(RES_bitmap, this.RES_layout[name]);
+        $util.setLayout(RES_bitmap, this.el_layout[name]);
         this.addChild(RES_bitmap);
         return RES_bitmap;
     };
@@ -223,7 +221,7 @@ var Index_ui = (function (_super) {
         textField.textColor = 0x000000;
         textField.size = 26;
         textField.textAlign = 'center';
-        $util.setLayout(textField, this.RES_layout.gold);
+        $util.setLayout(textField, this.el_layout.gold);
         this.addChild(textField);
         return textField;
     };
@@ -253,8 +251,7 @@ var List_ui = (function (_super) {
     __extends(List_ui, _super);
     function List_ui() {
         var _this = _super.call(this) || this;
-        //$代表形状和文字绘制
-        _this.RES_layout = {
+        _this.el_layout = {
             bg: { x: 0, y: 0, w: 750, h: 1634 },
             back: { x: 46, y: 33, w: 46, h: 48 },
             item: {
@@ -280,12 +277,12 @@ var List_ui = (function (_super) {
             var RES_bg, back;
             return __generator(this, function (_a) {
                 RES_bg = new egret.Bitmap(RES.getRes('listbg'));
-                $util.setLayout(RES_bg, this.RES_layout['bg']);
+                $util.setLayout(RES_bg, this.el_layout['bg']);
                 this.$main.PageBg.addChild(RES_bg); //加载到main的PageBg里去，保证背景不滚动
                 //顶部元素必传值
-                this.$firstEleY = this.RES_layout.back.y;
+                this.$firstEleY = this.el_layout.back.y;
                 back = new egret.Bitmap(this.RES_common.getTexture('back'));
-                $util.setLayout(back, this.RES_layout.back);
+                $util.setLayout(back, this.el_layout.back);
                 this.addChild(back);
                 $util.btnActive(back, function () {
                     _this.$main.back();
@@ -304,10 +301,10 @@ var List_ui = (function (_super) {
             //容器
             var itemCon = new egret.DisplayObjectContainer();
             var layout = {
-                x: _this.RES_layout.item.x,
-                y: _this.RES_layout.item.y + index * 280,
-                w: _this.RES_layout.item.w,
-                h: _this.RES_layout.item.h
+                x: _this.el_layout.item.x,
+                y: _this.el_layout.item.y + index * 280,
+                w: _this.el_layout.item.w,
+                h: _this.el_layout.item.h
             };
             $util.setLayout(itemCon, layout);
             _this.addChild(itemCon);
@@ -331,7 +328,7 @@ var List_ui = (function (_super) {
             var RES_item = new egret.Bitmap(_this.RES_list.getTexture('item'));
             itemCon.addChild(RES_item);
             var No = new egret.TextField();
-            $util.setLayout(No, _this.RES_layout.item.No);
+            $util.setLayout(No, _this.el_layout.item.No);
             No.textColor = 0xffffff;
             No.size = 40;
             No.text = item.No + '  点击进入下个页面';
@@ -345,7 +342,7 @@ var List_ui = (function (_super) {
     //快速创建
     List_ui.prototype.fastBitmap = function (resObj, name) {
         var RES_bitmap = new egret.Bitmap(resObj.getTexture(name));
-        $util.setLayout(RES_bitmap, this.RES_layout[name]);
+        $util.setLayout(RES_bitmap, this.el_layout[name]);
         this.addChild(RES_bitmap);
         return RES_bitmap;
     };
